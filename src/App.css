@@ -453,7 +453,8 @@
 }
 
 .websiteList__card > img {
-  object-fit: contain;
+  object-fit: cover;
+  object-position: 50% 0;
   width: 240px;
   height: 180px;
 }
@@ -512,7 +513,8 @@
   .websiteList__card > img {
     margin-right: 1.5rem;
     margin-left: 1rem;
-    object-fit: contain;
+    object-fit: cover;
+    object-position: 50% 0;
   }
   .websiteList__card > span {
     padding-right: 1rem;
