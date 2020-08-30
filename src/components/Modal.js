@@ -3,13 +3,7 @@ import { motion } from "framer-motion";
 import { MdArrowBack } from "react-icons/md";
 import { IoLogoGithub, IoIosLink } from "react-icons/io";
 
-const Modal = ({ modalTrigger, selectedProject, setSelectedId }) => {
-  const handleOutOfBoundClick = (e) => {
-    if (e.target.classList.contains("modal")) {
-      setSelectedId("");
-    }
-  };
-
+const Modal = ({ modalTrigger, selectedProject, handleOutOfBoundClick }) => {
   return (
     <div>
       <motion.div

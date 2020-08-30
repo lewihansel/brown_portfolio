@@ -42,6 +42,7 @@ const Home = () => {
   const handleKeyDown = (e) => {
     if (e.key === "Escape") {
       modalTrigger();
+      document.body.style.overflowY = "";
     }
   };
 
@@ -55,6 +56,12 @@ const Home = () => {
     }
   };
 
+  const handleOutOfBoundClick = (e) => {
+    if (e.target.classList.contains("modal")) {
+      modalTrigger();
+    }
+  };
+
   return (
     <>
       <Header />
@@ -65,7 +72,7 @@ const Home = () => {
         <Modal
           modalTrigger={modalTrigger}
           selectedProject={selectedProject}
-          setSelectedId={setSelectedId}
+          handleOutOfBoundClick={handleOutOfBoundClick}
         />
       )}
 
