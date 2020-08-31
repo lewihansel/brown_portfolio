@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { MdArrowBack } from "react-icons/md";
 import { IoLogoGithub, IoIosLink } from "react-icons/io";
+import { useState } from "react";
 
 const Modal = ({ modalTrigger, selectedProject, handleOutOfBoundClick }) => {
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    if (selectedProject) {
+      console.log(selectedProject.userInterface);
+      setImages(selectedProject.userInterface);
+    } else {
+      console.log("none");
+    }
+  }, [selectedProject]);
+
   return (
     <div>
       <motion.div
@@ -39,6 +51,9 @@ const Modal = ({ modalTrigger, selectedProject, handleOutOfBoundClick }) => {
             <div className="modal__projectDescription">
               {selectedProject?.description3}
             </div>
+
+            {images &&
+              images.map((image) => <img src={image} alt={`${image}`} />)}
 
             <div className="modal__links">
               {selectedProject.url && (

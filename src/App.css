@@ -579,7 +579,8 @@
   overflow-y: scroll;
 }
 
-.modal__project > a > img {
+.modal__project > a > img,
+.modal__project > img {
   margin-bottom: 1.5rem;
   width: 100%;
 }
